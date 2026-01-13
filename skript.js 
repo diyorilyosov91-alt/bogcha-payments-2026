@@ -1,4 +1,4 @@
-const API_URL = "sheetdb.io"; 
+const API_URL = "https://sheetdb.io/api/v1/p9hrgke6kvp0a"; // <-- Yangi URL manzil shu yerda
 
 async function tolovniSaqlash() {
     const ismInput = document.getElementById('bolaIsmi');
@@ -16,7 +16,7 @@ async function tolovniSaqlash() {
             }
         };
 
-        // 'await' kalit so'zi fetch oldiga qo'shildi va manzil yangilandi
+        // 'await' kalit so'zi fetch oldiga qo'shildi va to'liq so'rov yuborish mexanizmi qo'shildi
         await fetch(API_URL, { 
             method: 'POST',
             headers: {
@@ -29,13 +29,13 @@ async function tolovniSaqlash() {
             console.log('Success:', data);
             ismInput.value = '';
             summaInput.value = '';
-            alert("Ma'lumot muvaffaqiyatli saqlandi!");
+            alert("Ma'lumot muvaffaqiyatli saqlandi!"); // Foydalanuvchiga xabar berish
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert("Ma'lumotni saqlashda xatolik yuz berdi. Konsolni tekshiring.");
+            alert("Ma'lumotni saqlashda xatolik yuz berdi. Konsolni tekshiring."); // Xatolik haqida xabar berish
         });
     } else {
-        alert("Iltimos, barcha maydonlarni to'ldiring.");
+        alert("Iltimos, barcha maydonlarni to'ldiring."); // Maydonlar bo'sh bo'lsa xabar berish
     }
 }
